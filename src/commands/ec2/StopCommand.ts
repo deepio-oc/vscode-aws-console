@@ -9,7 +9,7 @@ export class StopCommand extends AbstractCommand<EC2Manager> {
         }
         await this.manager.client
             .stopInstances({
-                InstanceIds: [item.instanceId]
+                InstanceIds: [item.instanceId], Hibernate: true
             })
             .promise();
 
